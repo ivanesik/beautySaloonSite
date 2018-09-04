@@ -1,0 +1,180 @@
+@font-face {
+    font-family: 'lazurskiBoldItalic';
+    src: url('../../fonts/lazurski-bold-italic.ttf');
+    font-style: normal; 
+    font-weight: normal; 
+}
+
+body {
+    background-image: url('../../image/backgrounds/bg-2.png');
+    height: 100vh;
+    font-family: 'lazurskiBoldItalic';
+    font-size: 18px;
+    margin: 0px;
+}
+a, a:hover {
+    color: black;
+    text-decoration-line: none;
+}
+
+
+/*region MODAL*/
+.modal-loading {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    background-color: rgb(4, 4, 4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+}
+.modal-image {
+    object-fit: cover;
+    object-position: center;
+}
+/*end region*/
+
+
+/*region HEADER*/
+.header {
+    height: 100px;
+    padding: 10px 40px 0px 40px;
+    background-color: white;
+    box-shadow: 0 1px 7px rgba(3, 9, 4, 0.33);
+    z-index: 2;
+}
+.header-fixed {
+    height: 85px;
+    padding: 10px 40px;
+    background-color: white;
+    box-shadow: 0 1px 7px rgba(3, 9, 4, 0.33);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    opacity: 0;
+    top: -45px;
+    transition: all 1s;     
+}
+.header-fixed.show {
+    top: 0px;
+    opacity: 1;
+}
+    .header-fixed .header__logo {
+        margin: 0;
+    }
+    .header__logo {
+        background-image: url('../../image/logo/Project1_Logo_Vector.svg');
+        background-size: cover;
+        width: 200px;
+        height: 100px;
+        margin-top: -30px;
+        margin-bottom: -20px;
+    }
+    .header__menu {
+        font-size: 1.2em;
+        margin-bottom: 0;
+        padding: 0px 20px;
+    }
+        .header__menu__button {
+            margin-left: 30px;
+        }
+    .header__address {
+    }
+
+/*end region*/
+
+
+/*region ABOUT*/
+    .content__about {
+        height: calc(100vh - 100px);
+        overflow: hidden;
+        background-color: #3c3c3c;
+    }
+/*end region*/
+
+
+/*region CONTENT-SECTION*/
+.section-content {
+    padding: 40px 0;
+}
+.section-content__title {
+    padding: 0 40px;
+}
+/*end region*/
+
+/*region price*/
+.content__price {
+    padding: 40px;
+    background-color: white;
+}
+.price__table__title {
+    padding-top: 10px;
+}
+/*end region*/
+
+
+/*region WORKS*/
+.columns {
+    column-width: 310px;
+    column-gap: 0px;
+    width: 90%;
+	margin: 50px auto;
+}
+.columns figure {
+    background: #fefefe;
+	padding: 15px 15px 10px 15px;
+	transition: opacity .4s ease-in-out;
+    display: inline-block;
+    margin: 0;
+}
+.columns figure img {
+	width: 100%; height: auto;
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 15px;
+	margin-bottom: 5px;
+}
+.columns:hover figure:not(:hover) {
+	opacity: 0.4;
+}
+/*end region*/
+
+
+/*region Contacts*/
+#contacts {
+    background-color: white;
+}
+
+.contacts__info {
+    margin-top: 20px;
+}
+/*end region*/
+
+
+/*region footer*/
+.footer {
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #3c3c3c;
+    color: #a4a4a4;
+}
+
+.footer__contacts {
+    margin-top: 20px;
+    display: flex;
+}
+
+.footer__contacts a {
+    padding: 0px 10px;
+    color: #a4a4a4 !important;
+}
+/*end region*/
