@@ -30,9 +30,16 @@ module.exports = {
             new UglifyJsPlugin({
                 cache: true,
                 parallel: true,
-                sourceMap: true // set to true if you want JS source maps
+                sourceMap: true
             }),
-            new OptimizeCSSAssetsPlugin({})
+            new OptimizeCSSAssetsPlugin({}),
+            new HtmlWebpackPlugin({
+                inject: 'head',
+                minify: true,
+                favicon: path.join(PATHS.src, 'favicon.ico'),
+                template: path.join(PATHS.src, 'index.html'),
+                filename: path.join(PATHS.build, 'index.html')
+            })
         ]
     },
     module: {
@@ -46,7 +53,10 @@ module.exports = {
             },
             {
                 test: /\.(png|woff|woff2|eot|ttf|svg)$/,
-                loader: 'url-loader?limit=100000'
+                loader: 'url-loader',
+                options: {
+                  limit: 100000
+                }
             }
         ]
     }

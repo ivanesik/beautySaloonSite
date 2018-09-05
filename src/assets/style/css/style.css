@@ -63,21 +63,25 @@
 
 
 /*region scroll*/
-::-webkit-scrollbar {
+#events ::-webkit-scrollbar {
     width: 10px;
+    padding: 0 20px;
+}
+#events ::-webkit-scrollbar-button {
+ width: 30px;
 }
 
-::-webkit-scrollbar-track {
+#events ::-webkit-scrollbar-track {
     background: #bbb; 
     border-radius: 7px;
 }
 
-::-webkit-scrollbar-thumb {
+#events ::-webkit-scrollbar-thumb {
     background: #888; 
     border-radius: 7px;
 }
 
-::-webkit-scrollbar-thumb:hover {
+#events ::-webkit-scrollbar-thumb:hover {
     background: #555; 
 }
 /*end region*/

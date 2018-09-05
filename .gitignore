@@ -1,9 +1,3 @@
-# Logs
-logs
-*.log
-
-# Dependency directories
 node_modules/
+dist/
 
-# TypeScript v1 declaration files
-typings/

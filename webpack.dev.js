@@ -1,10 +1,20 @@
+const path = require('path');
 let webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+
+const PATHS = {
+    src: path.resolve(__dirname, 'src'),
+    entry: path.resolve(__dirname, 'src/client'),
+    build: path.resolve(__dirname, 'dist'),
+    assets: path.resolve(__dirname, 'src/assets'),
+};
 
 module.exports = {
-    entry: "./src/client/main.js",
+    entry: path.join(PATHS.entry, 'index.js'),
     output: {
-        path: __dirname + "/src/client/dist",
+        path: PATHS.build,
         filename: "bundle.js"
     },
     resolve: {
@@ -16,7 +26,26 @@ module.exports = {
             jQuery: "jquery",
             "window.jQuery": "jquery"
         }),
-        new CleanWebpackPlugin('/src/client/dist')
+        new CleanWebpackPlugin(PATHS.build), // чистит директорию сборки
+        new HtmlWebpackPlugin({ // html модуль с его настройкой, в него будет автоимпорт
+            inject: 'head',
+            favicon: path.join(PATHS.src, 'favicon.ico'),
+            template: path.join(PATHS.src, 'index.html'),
+            filename: path.join(PATHS.build, 'index.html')
+        }),
+        new CopyWebpackPlugin([
+            path.join(PATHS.assets, 'image', 'backgrounds', 'carusel-1.jpg'),
+            path.join(PATHS.assets, 'image', 'backgrounds', 'carusel-2.jpg'),
+            path.join(PATHS.assets, 'image', 'backgrounds', 'carusel-3.jpg'),
+            {
+                from: path.join(PATHS.assets, 'icons'),
+                to: path.join(PATHS.build, 'assets', 'icons')
+            },
+            {
+                from: path.join(PATHS.assets, 'image', 'loading'),
+                to: path.join(PATHS.build)
+            }
+        ])
     ],
     module: {
         rules: [
@@ -29,26 +58,22 @@ module.exports = {
             },
             {
                 test: /\.svg$/,
-                loader: 'url-loader?limit=100000' //заменяет url ссылки на сами файлы в base64 
+                loader: 'url-loader', //заменяет url ссылки на сами файлы в base64 
+                options: {
+                    limit: 100000
+                }
             },
             {
                 test: /\.(png|woff|woff2|eot|ttf|jpg|gif)$/,
-                use: [
-                    {
-                        loader: 'file-loader', // заменяет url ссылки на модули с путями-указателями на файл
-                        options: {}
-                    }
-                ]
-            },
-            {
-                test: /\.html$/,
-                use: [{
-                    loader: 'html-loader',
-                    options: {
-                        minimize: true
-                    }
-                }]
+                loader: 'file-loader',// заменяет url ссылки на модули с путями-указателями на файл
+                options: {
+                    outputPath: 'assets/'
+                },
             }
         ]
+    },
+    devServer: {
+        port: 8080,
+        stats: 'errors-only'
     }
 }

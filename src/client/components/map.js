@@ -11,7 +11,8 @@ export let mapSetup = function(){
             center: [56.458139, 84.957135],
             // Уровень масштабирования. Допустимые значения:
             // от 0 (весь мир) до 19.
-            zoom: 15
+            zoom: 15,
+            controls: ['zoomControl']
         });
 
         var myPlacemark = new ymaps.Placemark([56.458139, 84.957135], {
