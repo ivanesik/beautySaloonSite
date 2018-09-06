@@ -41,11 +41,16 @@ a, a:hover {
 
 /*region HEADER*/
 .header {
-    height: 110px;
-    padding: 10px 40px 0px 40px;
+    height: 85px;
+    padding: 10px 25px 0px 25px;
     background-color: white;
     box-shadow: 0 1px 7px rgba(3, 9, 4, 0.33);
     z-index: 2;
+}
+@media (min-width: 992px) {
+    .header {
+        height: 110px;
+    }
 }
 .header-fixed {
     height: 85px;
@@ -80,7 +85,7 @@ a, a:hover {
     }
     .header__menu {
         margin-bottom: 0;
-        padding: 0px 20px;
+        padding: 0;
     }
         .header__menu__button {
             margin-left: 30px;
@@ -96,10 +101,15 @@ a, a:hover {
 
 
 /*region ABOUT*/
-    .content__about {
-        height: calc(100vh - 110px);
-        overflow: hidden;
-        background-color: #3c3c3c;
+.content__about {
+    height: calc(100vh - 85px);
+    overflow: hidden;
+    background-color: #3c3c3c;
+}
+    @media (min-width: 992px) {
+        .content__about {
+            height: calc(100vh - 110px);
+        }
     }
 /*end region*/
 

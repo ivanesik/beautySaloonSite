@@ -43,7 +43,7 @@ module.exports = {
             },
             {
                 from: path.join(PATHS.assets, 'image', 'loading'),
-                to: path.join(PATHS.build)
+                to: PATHS.build
             }
         ])
     ],
@@ -73,7 +73,7 @@ module.exports = {
         ]
     },
     devServer: {
-        port: 8080,
-        stats: 'errors-only'
+        contentBase: PATHS.build,
+        port: 8081
     }
 }
