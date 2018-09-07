@@ -91,7 +91,7 @@ a, a:hover {
             margin-left: 30px;
             transition: all 0.3s;
         }
-            .header__menu__button:hover {
+            .header .header__menu__button:hover {
                 border-bottom: 2px solid darkgray;
             }
     .header__address {
@@ -120,6 +120,7 @@ a, a:hover {
 }
 .section-content__title {
     padding: 0 40px;
+    margin: 0;
 }
 /*end region*/
 
@@ -156,6 +157,13 @@ a, a:hover {
 }
 .columns:hover figure:not(:hover) {
 	opacity: 0.4;
+}
+/*end region*/
+
+
+/*region STUDY*/
+#study {
+    background-color: #fefefe;
 }
 /*end region*/
 

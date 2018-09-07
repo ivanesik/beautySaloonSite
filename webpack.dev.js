@@ -1,8 +1,8 @@
 const path = require('path');
 let webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const PATHS = {
     src: path.resolve(__dirname, 'src'),
@@ -37,6 +37,7 @@ module.exports = {
             path.join(PATHS.assets, 'image', 'backgrounds', 'carusel-1.jpg'),
             path.join(PATHS.assets, 'image', 'backgrounds', 'carusel-2.jpg'),
             path.join(PATHS.assets, 'image', 'backgrounds', 'carusel-3.jpg'),
+            path.join(PATHS.assets, 'image', 'faceNicobadjio.jpg'),
             {
                 from: path.join(PATHS.assets, 'icons'),
                 to: path.join(PATHS.build, 'assets', 'icons')
