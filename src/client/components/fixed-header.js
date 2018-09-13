@@ -1,7 +1,7 @@
 export let headerSetup = (function () {
     $(window).scroll(function () {
         const scroll = $(window).scrollTop();
-        const winHeight = $(window).height();
+        const winHeight = $(window).height() - 90;
         if (scroll > winHeight) {
             $('.header-fixed').addClass('show');
         } else {

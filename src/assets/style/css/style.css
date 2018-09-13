@@ -52,7 +52,8 @@
         object-fit: cover;
     }
     .list__item .description {
-        background-color: darkgray;
+        padding: 30px;
+        background-color: white;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -64,6 +65,7 @@
         bottom: 0;
         right: 0;
         transform: rotateY(180deg);
+        background-size: 100% 100%;
     }
         .list__item:hover img {
             transform: rotateY(180deg);
@@ -77,30 +79,5 @@
 /*region table*/
 .table-clear {
  border: 0;
-}
-/*end region*/
-
-
-/*region scroll*/
-#events ::-webkit-scrollbar {
-    width: 10px;
-    padding: 0 20px;
-}
-#events ::-webkit-scrollbar-button {
- width: 30px;
-}
-
-#events ::-webkit-scrollbar-track {
-    background: #bbb; 
-    border-radius: 7px;
-}
-
-#events ::-webkit-scrollbar-thumb {
-    background: #888; 
-    border-radius: 7px;
-}
-
-#events ::-webkit-scrollbar-thumb:hover {
-    background: #555; 
 }
 /*end region*/

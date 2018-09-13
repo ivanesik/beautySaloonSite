@@ -19,7 +19,7 @@ module.exports = {
     entry: path.join(PATHS.entry, 'index.js'),
     output: {
         path: PATHS.build,
-        filename: "bundle.js"
+        filename: "bundle.[contenthash].js"
     },
     resolve: {
         modules: ['node_modules']
@@ -38,9 +38,10 @@ module.exports = {
             filename: path.join(PATHS.build, 'index.html')
         }),
         new CopyWebpackPlugin([
-            path.join(PATHS.assets, 'image', 'backgrounds', 'carusel-1.jpg'),
+            path.join(PATHS.assets, 'image', 'backgrounds', 'carusel-1.png'),
             path.join(PATHS.assets, 'image', 'backgrounds', 'carusel-2.jpg'),
             path.join(PATHS.assets, 'image', 'backgrounds', 'carusel-3.jpg'),
+            path.join(PATHS.assets, 'image', 'backgrounds', 'carusel-4.jpg'),
             path.join(PATHS.assets, 'image', 'faceNicobadjio.jpg'),
             {
                 from: path.join(PATHS.assets, 'icons'),
@@ -76,6 +77,14 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.scss$/,
+                use: [
+                    "style-loader", // creates style nodes from JS strings
+                    "css-loader", // translates CSS into CommonJS
+                    "sass-loader" // compiles Sass to CSS, using Node Sass by default
+                ]
+            },
+            {
                 test: /\.css$/,
                 use: [
                     "style-loader", // встраивает импортированные css в html в котором вызывается скрипт bundle
@@ -97,9 +106,5 @@ module.exports = {
                 },
             }
         ]
-    },
-    devServer: {
-        contentBase: PATHS.build,
-        port: 8081
     }
 }

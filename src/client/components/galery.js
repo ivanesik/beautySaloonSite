@@ -26,7 +26,7 @@ export let galerySetup = (function () {
         { img: img17, desc: 'qwerty' }, { img: img18, desc: 'qwerty' }
     ];
 
-    const columns = $('#works .columns');
+    const columns = $('#gallery .columns');
 
     figures.forEach(image => {
         let figure = document.createElement('figure');
