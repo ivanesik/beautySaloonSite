@@ -1,4 +1,5 @@
 var http = require('http'),
+    https = require('https'),
     fs = require('fs'),
     url = require('url'),
     path = require('path');
@@ -20,7 +21,7 @@ console.log('app start');
 http.createServer(function(request, response) {
     let pathName = url.parse(request.url).path;
     if (pathName == '/')
-        pathName = '/index.html';
+        pathName = path.resolve(__dirname, '..', 'dist', 'index.html');
 
     const extName = path.extname(pathName); // file extension
     const mimeType = mimeTypes[extName];

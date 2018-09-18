@@ -4,37 +4,47 @@
 <head>
     <title>Проект N1</title>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" lang="en" content="Elioskin Ivan">
+    <meta name="author" lang="ru" content="Елёскин Иван">
+    <meta name="keywords" lang="en" content="Buity saloon">
+    <meta name="keywords" lang="ru" content="Cалон красоты, прически, макияж, маникюр, обучение">
+    <meta name="description" lang="ru" content="Студия Проект N1. Салон красоты, прически, макияж, маникюр. Свадебные и вечерние образы. Обучение стилистов и парикмахеров">
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 </head>
 
 <body>
+    <div class="modal-loading">
+        <img src="./giphy.gif">
+    </div>
+
     <header>
-        <div class="container-fluid d-flex align-items-center justify-content-between">
+        <div class="container-fluid d-flex p-0 align-items-center justify-content-between">
             <div class="d-none d-lg-block">+7-923-409-85-02<br>+7-923-405-00-44</div>
             <div class="logo"></div>
-            <div>Нахимова 8 ст.37,<br> офис 203</div>
+            <div class="d-none d-sm-block">г.Томск, Нахимова 8<br>ст.37 офис 203</div>
         </div>
-        <nav class="container mt-3 d-none d-lg-block">
-            <ul class="header__nav d-flex justify-content-around">
-                <li class="header__nav__button"><a href="#abountCarousel">О студии</a></li>
-                <li class="header__nav__button"><a href="#events">События</a></li>
-                <li class="header__nav__button"><a href="#price">Услуги и цены</a></li>
-                <li class="header__nav__button"><a href="#study">Школа стилистов</a></li>
-                <li class="header__nav__button"><a href="#faceNicobadjio">Face Nicobadjio</a></li>
-                <li class="header__nav__button"><a href="#contacts">Контакты</a></li>
+        <nav class="container-fluid mt-3 d-none d-lg-block">
+            <ul class="d-flex justify-content-around">
+                <li><a href="#abountCarousel">О студии</a></li>
+                <li><a href="#events">События</a></li>
+                <li><a href="#price">Услуги и цены</a></li>
+                <li><a href="#study">Школа стилистов</a></li>
+                <li><a href="#faceNicobaggio">Face Nicobaggio</a></li>
+                <li><a href="#contacts">Контакты</a></li>
             </ul>
         </nav>
     </header>
     <header class="header-fixed">
         <div class="logo"></div>
         <nav>
-            <ul class="header__nav d-none d-xl-flex">
-                <li class="header__nav__button"><a href="#abountCarousel">О студии</a></li>
-                <li class="header__nav__button"><a href="#events">События</a></li>
-                <li class="header__nav__button"><a href="#price">Услуги и цены</a></li>
-                <li class="header__nav__button"><a href="#study">Школа стилистов</a></li>
-                <li class="header__nav__button"><a href="#faceNicobadjio">Face Nicobadjio</a></li>
-                <li class="header__nav__button"><a href="#contacts">Контакты</a></li>
+            <ul class="d-none d-xl-flex">
+                <li><a href="#abountCarousel">О студии</a></li>
+                <li><a href="#events">События</a></li>
+                <li><a href="#price">Услуги и цены</a></li>
+                <li><a href="#study">Школа стилистов</a></li>
+                <li><a href="#faceNicobaggio">Face Nicobaggio</a></li>
+                <li><a href="#contacts">Контакты</a></li>
             </ul>
         </nav>
     </header>
@@ -51,27 +61,29 @@
                     <img class="img-full-center d-block h-100 w-100" src="./carusel-4.jpg" alt="С этой картинкой что-то пошло не так. Но мы обязательно это исправим">
                     <div class="carousel-caption">
                         <h4>Проект N1 - территория красоты</h4>
-                        <p>Место где можно сделать укладку, макияж, маникюр и оформить бровки в любое удобное тебе
+                        <p class="d-none d-sm-block">Место где можно сделать укладку, макияж, маникюр и оформить бровки
+                            в любое удобное тебе
                             время 24/7!.</p>
                     </div>
                 </div>
                 <div class="carousel-item h-100">
                     <img class="img-full-top d-block h-100 w-100" src="./carusel-1.png" alt="С этой картинкой что-то пошло не так. Но мы обязательно это исправим">
                     <div class="carousel-caption">
-                        <h4>Делаем красиво и с душой!</h4>
+                        <h3>Делаем красиво и с душой!</h3>
                     </div>
                 </div>
                 <div class="carousel-item h-100">
                     <img class="img-full-bottom d-block h-100 w-100" src="./carusel-2.jpg" alt="С этой картинкой что-то пошло не так. Но мы обязательно это исправим">
                     <div class="carousel-caption">
-                        <h4>Бьюти-девичник - это модно и стильно!</h4>
+                        <h3>Бьюти-девичник - это модно и стильно!</h3>
                     </div>
                 </div>
                 <div class="carousel-item h-100">
                     <img class="img-full-center d-block h-100 w-100" src="./carusel-3.jpg" alt="С этой картинкой что-то пошло не так. Но мы обязательно это исправим">
                     <div class="carousel-caption">
                         <h4>ШКОЛА СТИЛИСТОВ</h4>
-                        <p>Для тех, кто хочет освоить красивую и творческую профессию, научиться подчеркивать свою
+                        <p class="d-none d-sm-block">Для тех, кто хочет освоить красивую и творческую профессию,
+                            научиться подчеркивать свою
                             индивидуальность.</p>
                     </div>
                 </div>
@@ -98,7 +110,7 @@
         </section>
         <section id="study" class="section">
             <h1 class="section__title">Школа стилистов</h1>
-            <div class="courses row m-0">
+            <div class="courses row m-0 px-sm-5 px-2 pt-4">
                 <div class="col-sm-12 col-lg-6 col-xl-4 mb-2">
                     <div class="course" data-toggle="modal" data-target="#studyModal" id="study1">
                         <div class="course__logo">
@@ -122,7 +134,7 @@
                         <div class="course__logo">
                             <img src="./assets/icons/crown.svg" alt="">
                         </div>
-                        <div class="course__caption">Индивидуальное обучение</div>
+                        <div class="course__caption text-truncate">Индивидуальное обучение</div>
                         <div class="course__text">брови/прически/макияж</div>
                     </div>
                 </div>
@@ -155,26 +167,31 @@
                 </div>
             </div>
         </section>
-        <section id="gallery" class="section">
+        <section id="gallery" class="section d-none d-sm-block">
             <h1 class="section__title">Галерея работ</h1>
             <div class="columns">
             </div>
         </section>
 
-        <section id="faceNicobadjio" class="section">
-            <h1 class="section__title text-center mb-4">Face Nicobadjio</h1>
-            <div class="row container-fluid">
-                <div class="about col-sm-5">
-                    <p>Мы являемся официальными представителями бренда <a class="strong" href="https://facenicobaggio.ru">Face
-                            Nicobadjio</a>.</p>
-                    <p>Создать естественный образ, скрыть все нюансы и подчеркнуть достоинства – вот основная
-                        задача грамотного макияжа.</p>
-                    <p> А помочь в этом призвана профессиональная декоративная косметика FACE nicobaggio
-                        professional make-up, в серии которой представлены широкая линейка косметических средств,
-                        фирменные аксессуары и профессиональные инструменты для визажиста.</p>
+        <section id="faceNicobaggio" class="section">
+            <h1 class="section__title text-center mb-4">Face Nicobaggio</h1>
+            <div class="container-fluid d-flex">
+                <div class="about col-sm-12 col-xl-7">
+                    <span>
+                        Официальный представитель <a class="strong" onclick="window.open('https://facenicobaggio.ru/','Мы в Instagram')">FACE
+                            nicobaggio
+                            professional make-up</a> <br><br>
+                        Философия бренда: подчеркивание природной красоты каждой женщины,
+                        создание личностного персонализированного макияжа для
+                        женщин всех возрастов.<br><br>Создать естественный образ, скрыть все нюансы и подчеркнуть
+                        достоинства – вот основная задача
+                        грамотного макияжа.<br><br>А помочь в этом призвана профессиональная декоративная косметика
+                        FACE nicobaggio professional make-up, в серии
+                        которой представлены широкая линейка косметических средств!
+                    </span>
                 </div>
-                <div class="col-sm-7">
-                    <img src="./faceNicobadjio.jpg" alt="">
+                <div class="col-xl-5 d-none d-xl-block">
+                    <img src="./faceNicobaggio.jpg" alt="">
                 </div>
             </div>
         </section>
@@ -182,43 +199,40 @@
             <h1 class="section__title">Контакты</h1>
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-sm-5">
+                    <div class="col-md-5">
                         <address class="contacts__info ml-4">
-                            Наш адрес:
-                            <br> Нахимова 8 ст.37, офис 203
+                            <span>Наш адрес:</span>
                             <br>
-                            <br> Запись по телефону:
-                            <br> +7-923-409-85-02
-                            <br> +7-923-405-00-44
+                            <p>г.Томск, ул. Нахимова 8 ст.37, офис 203 (заезд со стороны ул. Учебной)</p>
+                            <p>Запись по телефону:
+                                <br> +7 923 409 85 02
+                                <br> +7 923 405 00 44</p>
+                            <p>Почта:
+                                <a href="mailto:project_number_one@mail.ru">project_number_one@mail.ru</a>
+                            </p>
+                            <div class="d-flex">
+                                <span class="icon mr-2" onclick="window.open('https://vk.com/hairstyletomsk','Мы в Контакте')">
+                                    <div class="contacts-vk"></div>
+                                </span>
+                                <span class="icon" onclick="window.open('https://www.instagram.com/project_n1_tsk/','Мы в Instagram')">
+                                    <div class="contacts-inst"></div>
+                                </span>
+                            </div>
                         </address>
                     </div>
-                    <div class="col-sm-7">
+                    <div class="col-md-7">
                         <div id="map" style="height: 400px"></div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="footer">
-            <span>ПРОЕКТ N1</span>
-            <div class="contacts">
-                <a>HOME</a>
-                <a>INSTAGRAM</a>
-                <a>FACEBOOK</a>
-                <a href="https://vk.com/hairstyletomsk">VK</a>
-                <a>TWITTER</a>
-            </div>
-        </section>
-    </div>
-
-    <div class="modal-loading">
-        <img src="./giphy.gif">
     </div>
 
     <div class="modal fade" id="studyModal" role="dialog" style="font-family: Arial, Helvetica, sans-serif">
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Включаем мозги!</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle"></h5>
                     <button type="button" class="close" data-dismiss="modal">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -228,6 +242,7 @@
             </div>
         </div>
     </div>
+
 </body>
 
 </html>

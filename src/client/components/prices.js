@@ -95,7 +95,7 @@ export default function () {
 
     priceList.forEach((master, index) => {
         let div = document.createElement('div');
-        div.setAttribute('class', 'col-xl-4 col-lg-6');
+        div.setAttribute('class', 'col-xl-4 col-lg-6 mt-4');
         let title = document.createElement('h3');
         title.classList.add('text-center');
         title.innerText = master.title;
@@ -132,6 +132,8 @@ export default function () {
 
         div.appendChild(title);
         div.appendChild(table);
+        const hr = document.createElement('hr');
+        div.appendChild(hr);
         container.append(div);
     });
 

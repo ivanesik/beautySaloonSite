@@ -1,19 +1,19 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../assets/style/css/style.css';
 import '../assets/style/scss/theme.scss'
 
 import 'bootstrap/js/dist/modal';
 import 'bootstrap/js/dist/carousel';
-import { headerSetup } from './components/fixed-header';
-import { eventsSetup } from './components/events';
-import { galerySetup } from './components/galery';
-import { mapSetup } from './components/map';
-import { loadingSetup } from './components/modal_loading';
+import headerSetup from './components/fixed-header';
+import eventsSetup from './components/events';
+import galerySetup from './components/galery';
+import mapSetup from './components/map';
+import loadingSetup from './components/modal_loading';
 import priceSetup from './components/prices';
 import studySetup from './components/study';
 
+/** On nav menu click event */
 let menuScroll = function () {
-    $(".header__nav").on("click", "a", function (event) {
+    $("nav").on("click", "a", function (event) {
         event.preventDefault(); //отменяем стандартную обработку нажатия по ссылке
         let id = $(this).attr('href'); //забираем идентификатор бока с атрибута href
         if (id) {
@@ -28,12 +28,12 @@ let menuScroll = function () {
 }
 
 $(document).ready(function () {
+    loadingSetup();
     eventsSetup();
     priceSetup();
     galerySetup();
     headerSetup();
     mapSetup();
-    loadingSetup();
     menuScroll();
     studySetup();
 });

@@ -1,4 +1,4 @@
-export let headerSetup = (function () {
+export default (function () {
     $(window).scroll(function () {
         const scroll = $(window).scrollTop();
         const winHeight = $(window).height() - 90;

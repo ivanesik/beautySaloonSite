@@ -1,9 +1,14 @@
 $header_small_height: 85px;
 $header_height: 110px;
+$normal_font_size: 18px;
+$mobile_font_size: 14px;
 
 @font-face {
     font-family: 'lazurskiBoldItalic';
-    src: url('../../fonts/lazurski-bold-italic.ttf');
+    src: url('../../fonts/874b83c55aa43f511d365c08f603ed86.woff') format("woff"),
+         url('../../fonts/874b83c55aa43f511d365c08f603ed86.woff2') format('woff2'),
+         url('../../fonts/lazurski-bold-italic.otf') format("opentype"),
+         url('../../fonts/lazurski-bold-italic.ttf') format("truetype");
     font-style: normal; 
     font-weight: normal; 
 }
@@ -13,8 +18,11 @@ body {
     background-image: url('../../image/backgrounds/bg-2.png');
     height: 100vh;
     font-family: 'lazurskiBoldItalic';
-    font-size: 18px;
+    font-size: $normal_font_size;
     margin: 0px;
+    @media (max-width: 576px) {
+        font-size: $mobile_font_size;
+    }
 }
 
 a, a:hover {
@@ -49,6 +57,9 @@ a, a:hover {
         object-position: center;
     }
 }
+.table-clear {
+    border: 0;
+}
 /*end region*/
 
 
@@ -76,13 +87,18 @@ header {
     nav {
         margin-bottom: 0;
         padding: 0;
-        li {
-            margin-left: 30px;
-            transition: all 0.3s;
-            &:hover {
-                border-bottom: 2px solid darkgray;
+        ul {
+            height: 30px;
+            margin-bottom: 0;
+            li {
+                margin-left: 30px;
+                transition: all 0.3s;
+                &:hover {
+                    border-bottom: 2px solid darkgray;
+                }
             }
         }
+        
     }
 
     &.header-fixed{
@@ -121,6 +137,87 @@ header {
 
     @media (min-width: 992px) {
         height: calc(100vh - #{$header_height});
+    }
+}
+
+.img-full-top {
+    object-fit: cover;
+    object-position: top;
+}
+
+.img-full-center {
+    object-fit: cover;
+    object-position: center;
+}
+
+.img-full-bottom {
+    object-fit: cover;
+    object-position: bottom;
+}
+/*end region*/
+
+
+/*region EVENTS*/
+.list-horizontal {
+    padding: 25px 0px 15px 0px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+
+    .list__item {
+        width: 300px;
+        height: 300px;
+        border-radius: 20px;
+        cursor: pointer;
+        margin-right: 20px;
+        display: inline-block;
+        position: relative;
+        object-position: center;
+        perspective: 2000px;
+
+        &:first-child {
+            margin-left: 40px;
+        }
+        &:last-child {
+            margin-right: 40px;
+        }
+        &:hover img {
+            transform: rotateY(180deg);
+        }
+        &:hover .description {
+            transform: rotateY(360deg);
+        }
+
+        & img, & .description {
+            transition: 0.8s;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            border-radius: 20px;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.5);
+        }
+        & img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            background-image: url('../../image/loading/loading.svg');
+            background-size: 100% 100%;
+        }
+        & .description {
+            padding: 30px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            text-align: center;
+            white-space: normal;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            transform: rotateY(180deg);
+            background-size: 100% 100%;
+        }
     }
 }
 /*end region*/
@@ -165,8 +262,6 @@ header {
     border-bottom: 1px solid lightgray;
 
     .courses {
-        padding: 30px 50px;
-
         .course {
             height: 100%;
             padding: 15px;
@@ -227,7 +322,9 @@ header {
             margin: 0;
 
             img {
-                width: 100%; height: auto;
+                width: 100%;
+                //height: auto;
+                min-height: 200px;
                 border-bottom: 1px solid #ccc;
                 padding-bottom: 15px;
                 margin-bottom: 5px;
@@ -238,9 +335,11 @@ header {
 /*end region*/
 
 
-/*region faceNicobadjio*/
-#faceNicobadjio {
-    max-height: 90vh;
+/*region faceNicobaggio*/
+#faceNicobaggio {
+    @media (min-width: 1200px) {
+        max-height: 90vh;
+    }
     background-color: black;
     color: white;
     .about {
@@ -268,23 +367,31 @@ header {
     .contacts__info {
         margin-top: 20px;
     }
-}
-/*end region*/
 
-/*region footer*/
-.footer {
-    padding: 20px 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: #3c3c3c;
-    color: #a4a4a4;
-    .contacts {
-        margin-top: 20px;
-        display: flex;
-        a {
-            padding: 0px 10px;
-            color: #a4a4a4 !important;
+    .icon {
+        background: white;
+        border: 2px solid #444;
+        border-radius: 22px;
+        cursor: pointer;
+        padding: 5px;
+        &:hover{
+            filter: invert(100%);
+            -webkit-filter: invert(100%);
+        }
+        & .contacts-vk {
+            background-size: cover;
+            margin-top: 3px;
+            height: 27px;
+            width: 30px;
+            background-image: url('../../icons/vk.svg');
+        }
+        & .contacts-inst {
+            background-size: 100% 100%;
+            height: 30px;
+            width: 30px;
+            background-image: url('../../icons/instagram.svg');
         }
     }
 }
+/*end region*/
+

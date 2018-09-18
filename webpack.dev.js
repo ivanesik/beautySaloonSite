@@ -38,7 +38,7 @@ module.exports = {
             path.join(PATHS.assets, 'image', 'backgrounds', 'carusel-2.jpg'),
             path.join(PATHS.assets, 'image', 'backgrounds', 'carusel-3.jpg'),
             path.join(PATHS.assets, 'image', 'backgrounds', 'carusel-4.jpg'),
-            path.join(PATHS.assets, 'image', 'faceNicobadjio.jpg'),
+            path.join(PATHS.assets, 'image', 'faceNicobaggio.jpg'),
             {
                 from: path.join(PATHS.assets, 'icons'),
                 to: path.join(PATHS.build, 'assets', 'icons')
@@ -74,7 +74,7 @@ module.exports = {
                 }
             },
             {
-                test: /\.(png|woff|woff2|eot|ttf|jpg|gif)$/,
+                test: /\.(png|woff|woff2|eot|ttf|jpg|gif|otf)$/,
                 loader: 'file-loader',// заменяет url ссылки на модули с путями-указателями на файл
                 options: {
                     outputPath: 'assets/'

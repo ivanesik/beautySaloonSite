@@ -1,4 +1,4 @@
-export let mapSetup = function(){
+export default function(){
     ymaps.ready(init);
 
     function init() {
