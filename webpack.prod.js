@@ -81,6 +81,7 @@ module.exports = {
                 use: [
                     "style-loader", // creates style nodes from JS strings
                     "css-loader", // translates CSS into CommonJS
+                    /* "postcss-loader", */
                     "sass-loader" // compiles Sass to CSS, using Node Sass by default
                 ]
             },
@@ -88,7 +89,8 @@ module.exports = {
                 test: /\.css$/,
                 use: [
                     "style-loader", // встраивает импортированные css в html в котором вызывается скрипт bundle
-                    "css-loader" // вместо import 'style.css' встраивает код из этого css
+                    "css-loader", // вместо import 'style.css' встраивает код из этого css
+                    /* "postcss-loader" */
                 ]
             },
             {
