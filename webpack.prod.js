@@ -16,7 +16,7 @@ const PATHS = {
 };
 
 module.exports = {
-    entry: path.join(PATHS.entry, 'index.js'),
+    entry: ['@babel/polyfill', path.join(PATHS.entry, 'index.js')],
     output: {
         path: PATHS.build,
         filename: "bundle.[contenthash].js"
@@ -38,17 +38,14 @@ module.exports = {
             filename: path.join(PATHS.build, 'index.html')
         }),
         new CopyWebpackPlugin([
-            path.join(PATHS.assets, 'image', 'backgrounds', 'carusel-1.png'),
-            path.join(PATHS.assets, 'image', 'backgrounds', 'carusel-2.jpg'),
-            path.join(PATHS.assets, 'image', 'backgrounds', 'carusel-3.jpg'),
-            path.join(PATHS.assets, 'image', 'backgrounds', 'carusel-4.jpg'),
+            path.join(PATHS.src, 'manifest.json'),
             path.join(PATHS.assets, 'image', 'faceNicobaggio.jpg'),
             {
                 from: path.join(PATHS.assets, 'icons'),
                 to: path.join(PATHS.build, 'assets', 'icons')
             },
             {
-                from: path.join(PATHS.assets, 'image', 'loading'),
+                from: path.join(PATHS.assets, 'image', 'loading', 'giphy.gif'),
                 to: PATHS.build
             }
         ]),
@@ -77,11 +74,21 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.js$/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
+                }
+            },
+            {
                 test: /\.scss$/,
                 use: [
                     "style-loader", // creates style nodes from JS strings
                     "css-loader", // translates CSS into CommonJS
-                    /* "postcss-loader", */
+                    "postcss-loader",
                     "sass-loader" // compiles Sass to CSS, using Node Sass by default
                 ]
             },
@@ -90,7 +97,7 @@ module.exports = {
                 use: [
                     "style-loader", // встраивает импортированные css в html в котором вызывается скрипт bundle
                     "css-loader", // вместо import 'style.css' встраивает код из этого css
-                    /* "postcss-loader" */
+                    "postcss-loader"
                 ]
             },
             {
@@ -101,7 +108,7 @@ module.exports = {
                 }
             },
             {
-                test: /\.(png|woff|woff2|eot|ttf|jpg|gif|otf)$/,
+                test: /\.(png|woff|woff2|eot|ttf|jpg|gif|otf|webp)$/,
                 loader: 'file-loader',// заменяет url ссылки на модули с путями-указателями на файл
                 options: {
                     outputPath: 'assets/'

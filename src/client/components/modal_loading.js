@@ -1,14 +1,16 @@
 export default function () {
 
-    const items = $('#abountCarousel img, #faceNicobaggio img'); //
+    const items = $('#abountCarousel img, #faceNicobaggio img');
 
     /** Remove modal loading view from DOM */
     let removeModal = function() {
-        let modal = $('.modal-loading');
-        modal.css('opacity', '0');
-        modal.bind('transitionend', () => {
-            modal.remove();
-        });
+        setTimeout(function() {
+            let modal = $('.modal-loading');
+            modal.css('opacity', '0');
+            modal.bind('transitionend', function() {
+                modal.remove();
+            });
+        }, 1000);
     };
 
     /** Check if "items" images is fully loaded */

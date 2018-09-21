@@ -9,6 +9,7 @@ $mobile_font_size: 14px;
          url('../../fonts/874b83c55aa43f511d365c08f603ed86.woff2') format('woff2'),
          url('../../fonts/lazurski-bold-italic.otf') format("opentype"),
          url('../../fonts/lazurski-bold-italic.ttf') format("truetype");
+    font-display: swap;
     font-style: normal; 
     font-weight: normal; 
 }
@@ -174,6 +175,16 @@ header {
         position: relative;
         object-position: center;
         perspective: 2000px;
+        @media (max-width: 576px) {
+            width: 250px;
+            height: 250px;
+            &:first-child {
+                margin-left: 20px;
+            }
+            &:last-child {
+                margin-right: 20px;
+            }
+        }
 
         &:first-child {
             margin-left: 40px;
@@ -323,8 +334,6 @@ header {
 
             img {
                 width: 100%;
-                //height: auto;
-                min-height: 200px;
                 border-bottom: 1px solid #ccc;
                 padding-bottom: 15px;
                 margin-bottom: 5px;

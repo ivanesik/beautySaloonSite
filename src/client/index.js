@@ -3,6 +3,8 @@ import '../assets/style/scss/theme.scss'
 
 import 'bootstrap/js/dist/modal';
 import 'bootstrap/js/dist/carousel';
+import '../client/help/lazyload';
+import caruselSetup from './components/carusel';
 import headerSetup from './components/fixed-header';
 import eventsSetup from './components/events';
 import galerySetup from './components/galery';
@@ -24,14 +26,15 @@ let menuScroll = function () {
                 top = $(id).offset().top - 85;
             $('body,html').animate({ scrollTop: top }, 1200); //анимируем переход на расстояние - top за 1500 мс
         }
-    }); 
-}
+    });
+};
 
 $(document).ready(function () {
+    caruselSetup();
     loadingSetup();
     eventsSetup();
     priceSetup();
-    galerySetup();
+    galerySetup(); // настраивает галерею работ
     headerSetup();
     mapSetup();
     menuScroll();

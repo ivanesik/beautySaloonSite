@@ -21,6 +21,7 @@ export default function() {
         div.classList.add('list__item');
         let img = document.createElement('img')
         img.setAttribute("src", event.image);
+        img.setAttribute("alt", "Здесь должна быть картинка, но она куда-то убежала");
         let descr = document.createElement('div');
         descr.classList.add('description');
         switch (index % 3){

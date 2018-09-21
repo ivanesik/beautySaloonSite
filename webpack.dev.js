@@ -34,10 +34,6 @@ module.exports = {
             filename: path.join(PATHS.build, 'index.html')
         }),
         new CopyWebpackPlugin([
-            path.join(PATHS.assets, 'image', 'backgrounds', 'carusel-1.png'),
-            path.join(PATHS.assets, 'image', 'backgrounds', 'carusel-2.jpg'),
-            path.join(PATHS.assets, 'image', 'backgrounds', 'carusel-3.jpg'),
-            path.join(PATHS.assets, 'image', 'backgrounds', 'carusel-4.jpg'),
             path.join(PATHS.assets, 'image', 'faceNicobaggio.jpg'),
             {
                 from: path.join(PATHS.assets, 'icons'),
@@ -74,7 +70,7 @@ module.exports = {
                 }
             },
             {
-                test: /\.(png|woff|woff2|eot|ttf|jpg|gif|otf)$/,
+                test: /\.(png|woff|woff2|eot|ttf|jpg|gif|otf|webp)$/,
                 loader: 'file-loader',// заменяет url ссылки на модули с путями-указателями на файл
                 options: {
                     outputPath: 'assets/'
