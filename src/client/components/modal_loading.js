@@ -1,7 +1,7 @@
+/** Remove loading modal view when page and images is loaded */
 export default function () {
 
     const items = $('#abountCarousel img, #faceNicobaggio img');
-
     /** Remove modal loading view from DOM */
     let removeModal = function() {
         setTimeout(function() {

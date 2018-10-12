@@ -1,5 +1,15 @@
 {
     "name": "Project N1",
     "short_name": "P1",
-    "display": "standalone"
+    "lang": "ru",
+    "display": "standalone",
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "icons": [
+        {
+            "sizes": "1024x1024",
+            "src": "",
+            "type": "image/png"
+        }
+    ]
 }

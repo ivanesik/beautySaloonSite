@@ -7,6 +7,7 @@ import eventImg1 from '../../assets/image/backgrounds/event-1.png';
 import eventImg2 from '../../assets/image/backgrounds/event-2.png';
 import eventImg3 from '../../assets/image/backgrounds/event-3.png';
 
+/** Setup Events section */
 export default function() {
     let events = [
         {image: img1, description: 'Вызывает улыбку и восторг! Ведь лучший подарок - это время, посвященное себе любимой! Приобрести можно с разным номиналом или на услуги.'},

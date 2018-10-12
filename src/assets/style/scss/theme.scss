@@ -15,15 +15,17 @@ $mobile_font_size: 14px;
 }
 
 /*region SHARED*/
-body {
-    background-image: url('../../image/backgrounds/bg-2.png');
-    height: 100vh;
-    font-family: 'lazurskiBoldItalic';
+html {
     font-size: $normal_font_size;
     margin: 0px;
     @media (max-width: 576px) {
         font-size: $mobile_font_size;
     }
+}
+
+body {
+    background-image: url('../../image/backgrounds/bg-2.png');    
+    font-family: 'lazurskiBoldItalic';
 }
 
 a, a:hover {
@@ -210,8 +212,6 @@ header {
             height: 100%;
             width: 100%;
             object-fit: cover;
-            background-image: url('../../image/loading/loading.svg');
-            background-size: 100% 100%;
         }
         & .description {
             padding: 30px;
@@ -334,6 +334,7 @@ header {
 
             img {
                 width: 100%;
+                min-height: 200px;
                 border-bottom: 1px solid #ccc;
                 padding-bottom: 15px;
                 margin-bottom: 5px;

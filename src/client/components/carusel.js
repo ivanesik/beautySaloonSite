@@ -9,6 +9,7 @@ import img4w from '../../assets/image/carusel/carusel-4.webp';
 
 import checkWepP from '../help/checkWebP';
 
+/** Setup top page bootstrap carusel */
 export default function () {
     const width = $(window).width();
     if (width < 576)

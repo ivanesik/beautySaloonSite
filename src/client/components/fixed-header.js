@@ -1,3 +1,4 @@
+/** Setup Fixed-Header section */
 export default (function () {
     $(window).scroll(function () {
         const scroll = $(window).scrollTop();

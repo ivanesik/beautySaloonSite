@@ -29,15 +29,16 @@ let menuScroll = function () {
     });
 };
 
+/** Build page with js */
 $(document).ready(function () {
     caruselSetup();
     loadingSetup();
     eventsSetup();
     priceSetup();
-    galerySetup(); // настраивает галерею работ
+    galerySetup();
     headerSetup();
-    mapSetup();
     menuScroll();
     studySetup();
+    mapSetup();
 });
 

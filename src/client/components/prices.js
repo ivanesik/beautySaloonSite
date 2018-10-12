@@ -1,3 +1,4 @@
+/** Setup Prices section */
 export default function () {
 
     let priceList = [

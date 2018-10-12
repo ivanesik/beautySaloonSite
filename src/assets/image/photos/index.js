@@ -16,6 +16,11 @@ import img15 from './15.min.webp';
 import img16 from './16.min.webp';
 import img17 from './17.min.webp';
 import img18 from './18.min.webp';
+import img19 from './19.min.webp';
+import img20 from './20.min.webp';
+import img21 from './21.min.webp';
+import img22 from './22.min.webp';
+
 import img1b from './1.min.jpg';
 import img2b from './2.min.jpg';
 import img3b from './3.min.jpg';
@@ -27,15 +32,19 @@ import img8b from './8.min.jpg';
 import img9b from './9.min.jpg';
 import img10b from './10.min.jpg';
 import img11b from './11.min.jpg';
-import img12b from './12.min.png';
+import img12b from './12.min.jpg';
 import img13b from './13.min.jpg';
 import img14b from './14.min.jpg';
 import img15b from './15.min.jpg';
 import img16b from './16.min.jpg';
 import img17b from './17.min.jpg';
 import img18b from './18.min.jpg';
+import img19b from './19.min.jpg';
+import img20b from './20.min.jpg';
+import img21b from './21.min.jpg';
+import img22b from './22.min.jpg';
 
 export const GALERY = [
-    img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16, img17, img18,
-    img1b, img2b, img3b, img4b, img5b, img6b, img7b, img8b, img9b, img10b, img11b, img12b, img13b, img14b, img15b, img16b, img17b, img18b,
+    img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16, img17, img18, img19, img20, img21, img22,
+    img1b, img2b, img3b, img4b, img5b, img6b, img7b, img8b, img9b, img10b, img11b, img12b, img13b, img14b, img15b, img16b, img17b, img18b, img19b, img20b, img21b, img22b
 ];

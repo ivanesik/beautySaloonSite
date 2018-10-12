@@ -39,6 +39,8 @@ module.exports = {
         }),
         new CopyWebpackPlugin([
             path.join(PATHS.src, 'manifest.json'),
+            path.join(PATHS.src, 'robots.txt'),
+            path.join(PATHS.src, 'yandex_8a7292047088ab77.html'),
             path.join(PATHS.assets, 'image', 'faceNicobaggio.jpg'),
             {
                 from: path.join(PATHS.assets, 'icons'),

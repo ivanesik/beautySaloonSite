@@ -1,3 +1,4 @@
+/** Yandex Map Api setup */
 export default function(){
     ymaps.ready(init);
 

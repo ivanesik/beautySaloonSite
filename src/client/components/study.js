@@ -1,3 +1,4 @@
+/** Setup Study Modal items */
 export default function () {
 
     let studyText = [
